@@ -4,7 +4,7 @@ import 'loaders.css/loaders.min.css';
 
 import iziToast from 'izitoast';
 
-import { getImagesByQuery, PER_PAGE } from '../js/pixabay-api';
+import { getImagesByQuery, PER_PAGE } from './js/pixabay-api';
 import {
   createGallery,
   clearGallery,
@@ -12,7 +12,7 @@ import {
   hideLoader,
   showLoadMoreButton,
   hideLoadMoreButton,
-} from '../js/render-functions';
+} from './js/render-functions';
 
 const formEl = document.querySelector('.form');
 const loadMoreBtn = document.querySelector('.load-more');
