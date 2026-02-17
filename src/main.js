@@ -36,18 +36,18 @@ async function onSearchSubmit(event) {
     return;
   }
 
-  if (newQuery !== query) {
-    query = newQuery;
-    page = 1;
-    clearGallery();
-  }
 
+  query = newQuery;
+  page = 1;
+  clearGallery();
   hideLoadMoreButton();
   await fetchAndRenderImages({ isLoadMore: false });
   formEl.reset();
 }
 
 async function onLoadMore() {
+
+  hideLoadMoreButton();
   await fetchAndRenderImages({ isLoadMore: true });
 }
 
@@ -90,6 +90,7 @@ async function fetchAndRenderImages({ isLoadMore }) {
       message: 'Something went wrong. Please try again!',
       position: 'topRight',
     });
+    hideLoadMoreButton();
   } finally {
     hideLoader();
   }
